@@ -1,3 +1,67 @@
+body {
+  font-family: 'lato'; }
 
+nav {
+  background: #276AAD;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  nav h1 {
+    font-weight: 300;
+    color: white;
+    margin: 2%; }
+  nav img {
+    width: 7%;
+    margin: 3%; }
+
+.back {
+  opacity: 0; }
+
+.quick-btn {
+  width: 60%;
+  height: 10vh;
+  background: #276AAD;
+  margin: 10% auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .quick-btn h1 {
+    font-weight: 300;
+    color: white; }
+  .quick-btn img {
+    height: 50%; }
+
+.selector {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  line-height: .5; }
+  .selector h2 {
+    font-weight: 300; }
+
+.meeting {
+  display: flex;
+  justify-content: space-around;
+  margin: 2% 10%;
+  border-bottom: 1px solid black; }
+
+.info {
+  line-height: 0;
+  text-align: center; }
+  .info p, .info h5 {
+    font-weight: 300; }
+
+.time-distance {
+  background: #276AAD;
+  width: 25%;
+  height: 10vh;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  line-height: 0; }
+  .time-distance h3, .time-distance h5 {
+    font-weight: 300; }
 
 /*# sourceMappingURL=style.css.map */
