@@ -11,8 +11,9 @@ public class MyController {
 
     @RequestMapping("/")
     public String Home(){
-        return "index";
 
+
+        return "index";
     }
 
 }

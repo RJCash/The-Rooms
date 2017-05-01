@@ -1,7 +1,5 @@
 package com.theironyard;
 
-import java.time.LocalTime;
-
 /**
  * Created by rickiecashwell on 4/28/17.
  */
@@ -10,11 +8,11 @@ public class Group {
     Integer id;
     String name;
     String location;
-    LocalTime time;
+    String time;
     String day;
     String type;
 
-    public Group(Integer id, String name, String location, LocalTime time, String day) {
+    public Group(Integer id, String name, String location, String time, String day) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -49,11 +47,11 @@ public class Group {
         this.location = location;
     }
 
-    public LocalTime getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
