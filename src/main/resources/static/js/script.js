@@ -77,7 +77,13 @@ document.getElementById("sa").onclick = function() {
     $('#top-five').hide();
 };
 
+// -------- Quick Find Button --------
+
 document.getElementById("quick-btn").onclick = function() {
+  document.querySelector('#quick-btn').style.visibility = "hidden";
+  document.querySelector('#selector').style.visibility = "hidden";
+  document.querySelector('#back').style.visibility = "visible";
+  document.querySelector('#quick-info').style.visibility = "visible";
   $('#top-five').show();
     $('#sunday').hide();
     $('#monday').hide();
@@ -86,4 +92,20 @@ document.getElementById("quick-btn").onclick = function() {
     $('#thursday').hide();
     $('#friday').hide();
     $('#saturday').hide();
+
+};
+
+document.getElementById("back").onclick = function() {
+  document.querySelector('#quick-btn').style.visibility = "visible";
+  document.querySelector('#selector').style.visibility = "visible";
+  document.querySelector('#back').style.visibility = "hidden";
+  document.querySelector('#quick-info').style.visibility = "hidden";
+  $('#sunday').show();
+  $('#monday').show();
+  $('#tuesday').show();
+  $('#wednesday').show();
+  $('#thursday').show();
+  $('#friday').show();
+  $('#saturday').show();
+  $('#top-five').show();
 };

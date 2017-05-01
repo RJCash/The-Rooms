@@ -17,10 +17,11 @@ nav {
     width:7%;
     margin:3%;
   }
+  .back {
+    visibility:hidden;
+  }
 }
-.back {
-  opacity: 0;
-}
+
 
 // ------- Quick Find Button -------
 .quick-btn {
@@ -39,6 +40,11 @@ nav {
   img {
     height:50%;
   }
+}
+.quick-info {
+  visibility:hidden;
+  color:#276AAD;
+  text-align: center;
 }
 
 // ----- Day Selector ----------

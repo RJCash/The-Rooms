@@ -14,9 +14,8 @@ nav {
   nav img {
     width: 7%;
     margin: 3%; }
-
-.back {
-  opacity: 0; }
+  nav .back {
+    visibility: hidden; }
 
 .quick-btn {
   width: 60%;
@@ -32,6 +31,11 @@ nav {
     color: white; }
   .quick-btn img {
     height: 50%; }
+
+.quick-info {
+  visibility: hidden;
+  color: #276AAD;
+  text-align: center; }
 
 .selector {
   display: flex;
