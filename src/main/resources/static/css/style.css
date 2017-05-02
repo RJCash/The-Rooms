@@ -1,3 +1,37 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'lato';
+  font-weight: 400;
+  text-align: center; }
+
+.day-time {
+  color: #276AAD; }
+
+.go-btn {
+  width: 60%;
+  height: 10vh;
+  background: #276AAD;
+  color: white;
+  margin: 10% auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .go-btn img {
+    height: 50%; }
+
+.fav-btn {
+  width: 50%;
+  height: 8vh;
+  margin: 10% auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .fav-btn img {
+    height: 50%;
+    margin: 5%; }
+
 body {
   font-family: 'lato'; }
 
@@ -14,9 +48,8 @@ nav {
   nav img {
     width: 7%;
     margin: 3%; }
-
-.back {
-  opacity: 0; }
+  nav .back {
+    visibility: hidden; }
 
 .quick-btn {
   width: 60%;
@@ -32,6 +65,11 @@ nav {
     color: white; }
   .quick-btn img {
     height: 50%; }
+
+.quick-info {
+  visibility: hidden;
+  color: #276AAD;
+  text-align: center; }
 
 .selector {
   display: flex;
