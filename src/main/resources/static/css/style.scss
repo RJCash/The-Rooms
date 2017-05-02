@@ -64,16 +64,21 @@ nav {
 // -------- Meeting List (homepage) -------
 .meeting {
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin:2% 10%;
   border-bottom:1px solid black;
 
 }
 .info {
-line-height: 0;
-text-align: center;
-  p, h5 {
-    font-weight: 300;
+  width:50%;
+  line-height: 0;
+  text-align: center;
+    p, h5 {
+      font-weight: 300;
+      word-wrap: break-word;
+  }
+  p {
+    line-height:1;
   }
 }
 .time-distance {
@@ -88,6 +93,3 @@ text-align: center;
     font-weight: 300;
   }
 }
-// .monday {
-//   display:none;
-// }

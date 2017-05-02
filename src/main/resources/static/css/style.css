@@ -81,15 +81,19 @@ nav {
 
 .meeting {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 2% 10%;
   border-bottom: 1px solid black; }
 
 .info {
+  width: 50%;
   line-height: 0;
   text-align: center; }
   .info p, .info h5 {
-    font-weight: 300; }
+    font-weight: 300;
+    word-wrap: break-word; }
+  .info p {
+    line-height: 1; }
 
 .time-distance {
   background: #276AAD;
