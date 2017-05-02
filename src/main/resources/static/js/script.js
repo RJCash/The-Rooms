@@ -80,8 +80,13 @@ document.getElementById("sa").onclick = function() {
 // -------- Quick Find Button --------
 
 document.getElementById("quick-btn").onclick = function() {
+<<<<<<< HEAD
   document.querySelector('#quick-btn').style.visibility = "hidden";
   document.querySelector('#selector').style.visibility = "hidden";
+=======
+  document.querySelector('#quick-btn').style.display = "none";
+  document.querySelector('#selector').style.display = "none";
+>>>>>>> 4fb59f98af3d805c28b1acbe1340c6f7f7d711cc
   document.querySelector('#back').style.visibility = "visible";
   document.querySelector('#quick-info').style.visibility = "visible";
   $('#top-five').show();
@@ -96,8 +101,13 @@ document.getElementById("quick-btn").onclick = function() {
 };
 
 document.getElementById("back").onclick = function() {
+<<<<<<< HEAD
   document.querySelector('#quick-btn').style.visibility = "visible";
   document.querySelector('#selector').style.visibility = "visible";
+=======
+  document.querySelector('#quick-btn').style.display = "flex";
+  document.querySelector('#selector').style.display = "flex";
+>>>>>>> 4fb59f98af3d805c28b1acbe1340c6f7f7d711cc
   document.querySelector('#back').style.visibility = "hidden";
   document.querySelector('#quick-info').style.visibility = "hidden";
   $('#sunday').show();
