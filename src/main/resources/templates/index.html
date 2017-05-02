@@ -17,7 +17,6 @@
     </nav>
     <div class="quick-btn" id="quick-btn">
       <h1>Quick Find</h1>
-      <img src="images/right-arrow.png" th:src="@{images/right-arrow.png}" alt=""/>
       <img src="../static/images/right-arrow.png" th:src="@{images/right-arrow.png}" alt=""/>
     </div>
     <div class="quick-info" id="quick-info">
@@ -27,7 +26,7 @@
       <div class="day" id="su">
         <h2>Su</h2>
       </div>
-      <div class="day" id="m">
+      <div class="day" id="m" th:value='Monday'>
         <h2>M</h2>
       </div>
       <div class="day" id="tu">
@@ -48,102 +47,109 @@
     </section>
 
     <section class="sunday" id="sunday">
-      <section class="meeting">
+      <section th:each="group: ${groupsSunday}" class="meeting">
         <div class="info">
-          <p>Sunday Meeting</p>
-          <h5>City</h5>
-          <h5>Type of Meeting</h5>
+          <p th:text="${group.name}">Monday Meeting</p>
+          <h5 th:text="${group.city}">City</h5>
+          <h5 th:remove="all">Type of Meeting</h5>
+          <p th:text="'Type: '+${group.type}"></p>
         </div>
         <div class="time-distance">
-          <h5>--:--pm</h5>
+          <h5 th:text="${group.time}">--:--pm</h5>
           <h3>0.00 mi</h3>
         </div>
       </section>
     </section>
     <section class="monday" id="monday">
-      <section th:each="group: ${groups}" class="meeting">
+      <section th:each="group: ${groupsMonday}" class="meeting">
         <div class="info">
           <p th:text="${group.name}">Monday Meeting</p>
-          <h5>City</h5>
-          <h5>Type of Meeting</h5>
+          <h5 th:text="${group.city}">City</h5>
+          <h5 th:remove="all">Type of Meeting</h5>
+          <p th:text="'Type: '+${group.type}"></p>
         </div>
         <div class="time-distance">
-          <h5>--:--pm</h5>
+          <h5 th:text="${group.time}">--:--pm</h5>
           <h3>0.00 mi</h3>
         </div>
       </section>
     </section>
     <section class="tuesday" id="tuesday">
-      <section class="meeting">
+      <section th:each="group: ${groupsTuesday}" class="meeting">
         <div class="info">
-          <p>Tuesday Meeting</p>
-          <h5>City</h5>
-          <h5>Type of Meeting</h5>
+          <p th:text="${group.name}">Tuesday Meeting</p>
+          <h5 th:text="${group.city}">City</h5>
+          <h5 th:remove="all">Type of Meeting</h5>
+          <p th:text="'Type: '+${group.type}"></p>
         </div>
         <div class="time-distance">
-          <h5>--:--pm</h5>
+          <h5 th:text="${group.time}">--:--pm</h5>
           <h3>0.00 mi</h3>
         </div>
       </section>
     </section>
 
     <section class="wednesday" id="wednesday">
-      <section class="meeting">
+      <section th:each="group: ${groupsWednesday}" class="meeting">
         <div class="info">
-          <p>Wednesday Meeting</p>
-          <h5>City</h5>
-          <h5>Type of Meeting</h5>
+          <p th:text="${group.name}">Wednesday Meeting</p>
+          <h5 th:text="${group.city}">City</h5>
+          <h5 th:remove="all">Type of Meeting</h5>
+          <p th:text="'Type: '+${group.type}"></p>
         </div>
         <div class="time-distance">
-          <h5>--:--pm</h5>
+          <h5 th:text="${group.time}">--:--pm</h5>
           <h3>0.00 mi</h3>
         </div>
       </section>
     </section>
 
-    <section class="Thursday" id="thursday">
-      <section class="meeting">
+    <section class="thursday" id="thursday">
+      <section th:each="group: ${groupsThursday}" class="meeting">
         <div class="info">
-          <p>Thursday Meeting</p>
-          <h5>City</h5>
-          <h5>Type of Meeting</h5>
+          <p th:text="${group.name}">Thursday Meeting</p>
+          <h5 th:text="${group.city}">City</h5>
+          <h5 th:remove="all">Type of Meeting</h5>
+          <p th:text="'Type: '+${group.type}"></p>
         </div>
         <div class="time-distance">
-          <h5>--:--pm</h5>
+          <h5 th:text="${group.time}">--:--pm</h5>
           <h3>0.00 mi</h3>
         </div>
       </section>
     </section>
 
     <section class="friday" id="friday">
-      <section class="meeting">
+      <section th:each="group: ${groupsFriday}" class="meeting">
         <div class="info">
-          <p>Friday Meeting</p>
-          <h5>City</h5>
-          <h5>Type of Meeting</h5>
+          <p th:text="${group.name}">Friday Meeting</p>
+          <h5 th:text="${group.city}">City</h5>
+          <h5 th:remove="all">Type of Meeting</h5>
+          <p th:text="'Type: '+${group.type}"></p>
         </div>
         <div class="time-distance">
-          <h5>--:--pm</h5>
+          <h5 th:text="${group.time}">--:--pm</h5>
           <h3>0.00 mi</h3>
         </div>
       </section>
     </section>
 
     <section class="saturday" id="saturday">
-      <section class="meeting">
+      <section th:each="group: ${groupsSaturday}" class="meeting">
         <div class="info">
-          <p>Saturday Meeting</p>
-          <h5>City</h5>
-          <h5>Type of Meeting</h5>
+          <p th:text="${group.name}">Saturday Meeting</p>
+          <h5 th:text="${group.city}">City</h5>
+          <h5 th:remove="all">Type of Meeting</h5>
+          <p th:text="'Type: '+${group.type}"></p>
         </div>
         <div class="time-distance">
-          <h5>--:--pm</h5>
+          <h5 th:text="${group.time}">--:--pm</h5>
           <h3>0.00 mi</h3>
         </div>
       </section>
     </section>
 
-    <section class="top-five" id="top-five">
+    <section th:remove="all" class="top-five" id="top-five">
       <section class="meeting">
         <div class="info">
           <p>#1 Meeting Name</p>
@@ -155,7 +161,7 @@
           <h3>0.00 mi</h3>
         </div>
       </section>
-      <section class="meeting">
+      <section th:remove="all" class="meeting">
         <div class="info">
           <p>#2 Meeting Name</p>
           <h5>City</h5>
@@ -166,7 +172,7 @@
           <h3>0.00 mi</h3>
         </div>
       </section>
-      <section class="meeting">
+      <section th:remove="all" class="meeting">
         <div class="info">
           <p>#3 Meeting Name</p>
           <h5>City</h5>
@@ -177,7 +183,7 @@
           <h3>0.00 mi</h3>
         </div>
       </section>
-      <section class="meeting">
+      <section th:remove="all" class="meeting">
         <div class="info">
           <p>#4 Meeting Name</p>
           <h5>City</h5>
@@ -188,7 +194,7 @@
           <h3>0.00 mi</h3>
         </div>
       </section>
-      <section class="meeting">
+      <section th:remove="all" class="meeting">
         <div class="info">
           <p>#5 Meeting Name</p>
           <h5>City</h5>

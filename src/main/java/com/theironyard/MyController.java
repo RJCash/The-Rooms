@@ -15,9 +15,15 @@ public class MyController {
 GroupRepository repo;
 
     @RequestMapping("/")
-    public String Home(Model model, @RequestParam(defaultValue = "Monday") String day){
-
-        model.addAttribute("groups",repo.listGroups(day));
+    public String Home(Model model, @RequestParam(defaultValue = "") String day){
+        model.addAttribute("day", day);
+        model.addAttribute("groupsMonday",repo.listGroups("Monday"));
+        model.addAttribute("groupsTuesday",repo.listGroups("Tuesday"));
+        model.addAttribute("groupsWednesday",repo.listGroups("Wednesday"));
+        model.addAttribute("groupsThursday",repo.listGroups("Thursday"));
+        model.addAttribute("groupsFriday",repo.listGroups("Friday"));
+        model.addAttribute("groupsSaturday",repo.listGroups("Saturday"));
+        model.addAttribute("groupsSunday",repo.listGroups("Sunday"));
         return "index";
     }
 

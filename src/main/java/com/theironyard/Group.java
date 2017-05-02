@@ -11,16 +11,27 @@ public class Group {
     String time;
     String day;
     String type;
+    String city;
 
-    public Group(Integer id, String name, String location, String time, String day) {
+    public Group(Integer id, String name, String location, String time, String day,String type, String city) {
         this.id = id;
         this.name = name;
         this.location = location;
         this.time = time;
         this.day = day;
+        this.type = type;
+        this.city = city;
         
     }
     public Group() {
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public Integer getId() {
