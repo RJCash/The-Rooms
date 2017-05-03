@@ -61,11 +61,16 @@ nav {
   nav .back {
     visibility: hidden; }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%; }
+
 .quick-btn {
   width: 60%;
   height: 10vh;
   background: #276AAD;
-  margin: 10% auto;
+  margin: 0% auto;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
@@ -79,7 +84,8 @@ nav {
 .quick-info {
   visibility: hidden;
   color: #276AAD;
-  text-align: center; }
+  text-align: center;
+  margin: 0; }
 
 .selector {
   display: flex;
