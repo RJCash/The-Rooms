@@ -1,3 +1,6 @@
+body {
+  background: #F8F9FE; }
+
 nav a {
   width: 10%; }
 nav a img {
@@ -39,7 +42,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 5%; }
 
 body {
-  font-family: 'lato'; }
+  font-family: 'lato';
+  background: #F8F9FE; }
 
 a {
   text-decoration: none;
@@ -64,7 +68,8 @@ nav {
 .logo {
   display: flex;
   justify-content: center;
-  margin-top: 5%; }
+  margin: 5% 30%;
+  width: 40%; }
 
 .quick-btn {
   width: 60%;
@@ -90,10 +95,12 @@ nav {
 .selector {
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid black;
-  line-height: .5; }
+  border-bottom: 1px solid black; }
   .selector h2 {
-    font-weight: 300; }
+    font-weight: 400;
+    border-bottom: 3px solid #F8F9FE; }
+  .selector .day:target {
+    border-bottom: 3px solid #F8F9FE; }
 
 .meeting {
   display: flex;

@@ -2,6 +2,7 @@
 
 body {
   font-family: 'lato';
+  background:#F8F9FE;
 }
 a {
   text-decoration:none;
@@ -31,7 +32,8 @@ nav {
 .logo {
   display:flex;
   justify-content: center;
-  margin-top:5%;
+  margin:5% 30%;
+  width:40%;
 }
 
 // ------- Quick Find Button -------
@@ -65,9 +67,12 @@ nav {
   display:flex;
   justify-content: space-around;
   border-bottom:1px solid black;
-  line-height: .5;
   h2 {
-    font-weight: 300;
+    font-weight: 400;
+    border-bottom:3px solid #F8F9FE;
+  }
+  .day:target {
+    border-bottom:3px solid #F8F9FE;
   }
 }
 
