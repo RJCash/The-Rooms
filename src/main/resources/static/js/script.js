@@ -113,3 +113,8 @@ document.getElementById("quick-btn").onclick = function() {
   $('#saturday').show();
   $('#top-five').show();
 };
+
+// ------- Favorite Button ---------
+document.getElementById("fav-btn").onclick = function() {
+  document.querySelector('#fav-btn').style.background = "#EA5858";
+};
