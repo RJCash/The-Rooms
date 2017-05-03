@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -13,6 +15,8 @@ import java.util.List;
 public class GroupRepository {
     @Autowired
     JdbcTemplate template;
+    LocalTime time;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss");
     public List<Group> listGroups(String day){
         return template.query("SELECT DISTINCT * FROM meeting WHERE list_day = ? and list_city IS NOT NULL" +
                         " order by list_time LIMIT 100",
