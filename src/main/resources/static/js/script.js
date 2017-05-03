@@ -1,4 +1,10 @@
 // ------ Daily Meeting Selector --------
+
+// $('.meeting').hide();
+// $('#su').click(function(){
+//   $('#sunday').show();
+// });
+
 document.getElementById("su").onclick = function() {
   $('#sunday').show();
     $('#monday').hide();
@@ -111,6 +117,6 @@ document.getElementById("back").onclick = function() {
 };
 
 // ------- Favorite Button ---------
-document.getElementById("fav-btn").onclick = function() {
-  document.querySelector('#fav-btn').style.background = "#EA5858";
-};
+// document.getElementById("fav-btn").onclick = function() {
+//   document.querySelector('#fav-btn').style.background = "#EA5858";
+// };
