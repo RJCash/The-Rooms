@@ -1,4 +1,10 @@
 // --------- Day Label ----------
+
+// ------ Daily Meeting Selector --------
+jQuery(document).ready(function($) {
+    alert("Your location is: " + geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
+});
+
 document.getElementById("su").onclick = function() {
   document.querySelector('#su').style.color = "#276AAD";
   document.querySelector('#m').style.color = "black";
@@ -16,8 +22,6 @@ document.getElementById("su").onclick = function() {
     $('#saturday').hide();
     $('#top-five').hide();
 };
-
-
 document.getElementById("m").onclick = function() {
   document.querySelector('#m').style.color = "#276AAD";
   document.querySelector('#su').style.color = "black";
@@ -129,6 +133,8 @@ document.getElementById("sa").onclick = function() {
 // -------- Quick Find Button --------
 
 document.getElementById("quick-btn").onclick = function() {
+  document.querySelector('#quick-btn').style.visibility = "hidden";
+  document.querySelector('#selector').style.visibility = "hidden";
   document.querySelector('#quick-btn').style.display = "none";
   document.querySelector('#selector').style.display = "none";
   document.querySelector('#back').style.visibility = "visible";
@@ -144,7 +150,11 @@ document.getElementById("quick-btn").onclick = function() {
 
 };
 
-document.getElementById("back").onclick = function() {
+  document.getElementById("back").onclick = function() {
+
+  document.querySelector('#quick-btn').style.visibility = "visible";
+  document.querySelector('#selector').style.visibility = "visible";
+
   document.querySelector('#quick-btn').style.display = "flex";
   document.querySelector('#selector').style.display = "flex";
   document.querySelector('#back').style.visibility = "hidden";
