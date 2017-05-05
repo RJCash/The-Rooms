@@ -1,3 +1,9 @@
+nav a {
+  width: 10%; }
+nav a img {
+  width: 75%;
+  margin: 20%; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'lato';
   font-weight: 400;
@@ -35,6 +41,10 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-family: 'lato'; }
 
+a {
+  text-decoration: none;
+  color: black; }
+
 nav {
   background: #276AAD;
   overflow: hidden;
@@ -51,11 +61,16 @@ nav {
   nav .back {
     visibility: hidden; }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%; }
+
 .quick-btn {
   width: 60%;
   height: 10vh;
   background: #276AAD;
-  margin: 10% auto;
+  margin: 0% auto;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
@@ -69,7 +84,8 @@ nav {
 .quick-info {
   visibility: hidden;
   color: #276AAD;
-  text-align: center; }
+  text-align: center;
+  margin: 0; }
 
 .selector {
   display: flex;
@@ -82,6 +98,7 @@ nav {
 .meeting {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 2% 10%;
   border-bottom: 1px solid black; }
 

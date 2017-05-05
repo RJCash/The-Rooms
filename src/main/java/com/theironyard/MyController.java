@@ -27,4 +27,20 @@ GroupRepository repo;
         return "index";
     }
 
+    @RequestMapping("/nearest")
+    public String near(double lat, double lon, Model model){
+
+        //model.addAttribute("nearest", repo.getNearest(35.7,-78.6));
+
+        return "meetingHtML";
+    }
+    @RequestMapping("/matchingMeetings")
+    public String matchingMeetings(){
+        return "meetingList";
+    }
+
+    @RequestMapping("/meeting")
+    public String meetingPage(){
+        return "meeting";
+    }
 }

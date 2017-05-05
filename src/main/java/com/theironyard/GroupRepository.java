@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,23 +14,40 @@ import java.util.List;
 public class GroupRepository {
     @Autowired
     JdbcTemplate template;
-    LocalTime time;
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss");
+
+    // list List<String> abr
+    public List<String> abrre(String input){
+        List<String> listTypes = new ArrayList<>();
+        listTypes.add(input);
+        return listTypes;
+    }
     public List<Group> listGroups(String day){
-        return template.query("SELECT DISTINCT * FROM meeting WHERE list_day = ? and list_city IS NOT NULL" +
-                        " order by list_time LIMIT 100",
+        List<Group> groups = template.query("SELECT  " +
+                        " meeting.id, meeting.name, meeting.meetingtime, meeting.location," +
+                        " meeting.meetingday,meeting.city, type.abbreviation" +
+                        " FROM meeting" +
+                        " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
+                        " JOIN type ON mt.typeid = type.id" +
+                        " WHERE meetingday = ? and city IS NOT NULL" +
+                        " order by meetingtime LIMIT 100",
                 new Object[]{day},
                 (ResultSet, row) -> new Group(
-                        ResultSet.getInt("list_slug"),
-                        ResultSet.getString("list_name"),
-                        ResultSet.getString("list_time"),
-                        ResultSet.getString("list_time"),
-                        ResultSet.getString("list_day"),
-                        ResultSet.getString("list_types"),
-                        ResultSet.getString("list_city")
+                        ResultSet.getInt("id"),
+                        ResultSet.getString("name"),
+                        ResultSet.getString("location"),
+                        ResultSet.getString("meetingtime"),
+                        ResultSet.getString("meetingday"),
+                        ResultSet.getString("city"),
+                        abrre(ResultSet.getString("abbreviation"))
                 )
         );
-    }
+//        String[] types = {};
+//        for(Group group:groups){
+//            template.query();
+//            group.setType(types);
+        return groups;
+            }
+
     public void insertJSON(){
         String json1 = "[\n" +
                "   {\n" +
