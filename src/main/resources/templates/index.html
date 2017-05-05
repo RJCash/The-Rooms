@@ -47,7 +47,7 @@
     </section>
 
     <section class="sunday" id="sunday">
-     <a href="meeting.html" th:href="@{/meeting.html}"><section th:each="group: ${groupsSunday}" class="meeting">
+     <a href="meeting.html" th:href="@{'/meeting?meetingId=' + ${group.id}}"><section th:each="group: ${groupsSunday}" class="meeting">
         <div class="info">
           <p th:text="${group.name}">Monday Meeting</p>
           <h5 th:text="${group.city}">City</h5>

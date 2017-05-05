@@ -13,7 +13,7 @@ import java.util.List;
 public class GroupRepository {
     @Autowired
     JdbcTemplate template;
-    public List<Group> listGroups(String day){
+    public List<Group> listGroups(String day) {
         return template.query("SELECT DISTINCT * FROM meeting WHERE list_day = ? and list_city IS NOT NULL" +
                         " order by list_time LIMIT 100",
                 new Object[]{day},
@@ -27,6 +27,20 @@ public class GroupRepository {
                         ResultSet.getString("list_city")
                 )
         );
+    }
+        public Group getGroups(Integer meetingId){
+            return template.queryForObject("SELECT DISTINCT * FROM meeting WHERE list_slug = ?" +
+                            " order by list_time LIMIT 100",
+                    (ResultSet, row) -> new Group(
+                            ResultSet.getInt("list_slug"),
+                            ResultSet.getString("list_name"),
+                            ResultSet.getString("list_time"),
+                            ResultSet.getString("list_time"),
+                            ResultSet.getString("list_day"),
+                            ResultSet.getString("list_types"),
+                            ResultSet.getString("list_city")),
+                    meetingId);
+
     }
     public void insertJSON(){
         String json1 = "[\n" +

@@ -23,6 +23,16 @@ public class Group {
         this.city = city;
         
     }
+    public String toString(){
+       return  "{Group" +
+                "Id=" + id +
+                ", Name='" + name + '\'' +
+                ", Location='" + location + '\'' +
+                ", Time='" + time + '\'' +
+                ", Day='" + day + '\'' +
+                ", Type='" + type + '\'' +
+                ", City='" + city ;
+    }
     public Group() {
     }
 
