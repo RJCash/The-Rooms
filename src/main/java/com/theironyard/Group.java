@@ -1,8 +1,10 @@
 package com.theironyard;
 
-/**
- * Created by rickiecashwell on 4/28/17.
- */
+import java.text.DecimalFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 
 public class Group {
     Integer id;
@@ -10,32 +12,57 @@ public class Group {
     String location;
     String time;
     String day;
-    String type;
+    List<String> type;
     String city;
-
-    public Group(Integer id, String name, String location, String time, String day,String type, String city) {
+    double latitude;
+    double longitude;
+    String miles;
+    LocalTime timeconverter;
+    DateTimeFormatter inputformatter = DateTimeFormatter.ofPattern("kk:mm:ss");
+    DateTimeFormatter outputformatter = DateTimeFormatter.ofPattern("hh:mm a");
+    DecimalFormat formatter = new DecimalFormat("#0.00");
+    public Group(Integer id, String name, String location, String time, String day, String city, List<String> types, double latitude, double longitude) {
         this.id = id;
         this.name = name;
         this.location = location;
-        this.time = time;
+        LocalTime templateTime = timeconverter.parse(time,inputformatter);
+        this.time = outputformatter.format(templateTime);
         this.day = day;
-        this.type = type;
         this.city = city;
+        this.type = types;
+        this.miles = formatter.format(Math.sqrt(Math.pow(longitude - -78.63912309999999, 2) + Math.pow(latitude - 35.7777974, 2)) *69);
         
     }
-    public String toString(){
-       return  "{Group" +
-                "Id=" + id +
-                ", Name='" + name + '\'' +
-                ", Location='" + location + '\'' +
-                ", Time='" + time + '\'' +
-                ", Day='" + day + '\'' +
-                ", Type='" + type + '\'' +
-                ", City='" + city ;
-    }
-    public Group() {
+    public Group(int id, String name, String location, String meetingtime, String meetingday, String city, List<String> abbreviation, double latitude, double longitude, Integer meetingId) {
     }
 
+    @Override
+    public String toString() {
+        return "Group{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", time='" + time + '\'' +
+                ", day='" + day + '\'' +
+                ", type=" + type +
+                ", city='" + city + '\'' +
+                ", timeconverter=" + timeconverter +
+                ", inputformatter=" + inputformatter +
+                ", outputformatter=" + outputformatter +
+                '}';
+    }
+    public void setMiles(String miles){
+    this.miles = miles;
+    }
+    public String getMiles(){
+        return this.miles;
+    }
+    public String getTime() {
+        return time;
+    }
+    public void setTime(String time) {
+        this.time = time;
+    }
     public String getCity() {
         return city;
     }
@@ -48,7 +75,7 @@ public class Group {
         return id;
     }
 
-    public void setId(Integer id) {this.id = id}
+    public void setId(Integer id) {this.id = id;}
 
     public String getName() {
         return name;
@@ -66,13 +93,7 @@ public class Group {
         this.location = location;
     }
 
-    public String getTime() {
-        return time;
-    }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
 
     public String getDay() {
         return day;
@@ -82,11 +103,11 @@ public class Group {
         this.day = day;
     }
 
-    public String getType() {
+    public List<String> getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(List<String> type) {
         this.type = type;
     }
 }

@@ -32,13 +32,18 @@ nav {
 =======
 >>>>>>> 4fb59f98af3d805c28b1acbe1340c6f7f7d711cc
 
+.logo {
+  display:flex;
+  justify-content: center;
+  margin-top:5%;
+}
 
 // ------- Quick Find Button -------
 .quick-btn {
   width:60%;
   height:10vh;
   background:#276AAD;
-  margin:10% auto;
+  margin:0% auto;
   border-radius:10px;
   display:flex;
   justify-content: space-around;
@@ -56,6 +61,7 @@ nav {
   visibility:hidden;
   color:#276AAD;
   text-align: center;
+  margin:0;
 }
 
 // ----- Day Selector ----------

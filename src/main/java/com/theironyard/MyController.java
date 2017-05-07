@@ -8,31 +8,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * Created by rickiecashwell on 4/28/17.
- */
 @Controller
 public class MyController {
-@Autowired
-GroupRepository repo;
+    @Autowired
+    GroupRepository repo;
 
     @RequestMapping("/")
-    public String Home(Model model, @RequestParam(defaultValue = "") String day){
+    public String Home(Model model, @RequestParam(defaultValue = "") String day) {
         model.addAttribute("day", day);
-        model.addAttribute("groupsMonday",repo.listGroups("Monday"));
-        model.addAttribute("groupsTuesday",repo.listGroups("Tuesday"));
-        model.addAttribute("groupsWednesday",repo.listGroups("Wednesday"));
-        model.addAttribute("groupsThursday",repo.listGroups("Thursday"));
-        model.addAttribute("groupsFriday",repo.listGroups("Friday"));
-        model.addAttribute("groupsSaturday",repo.listGroups("Saturday"));
-        model.addAttribute("groupsSunday",repo.listGroups("Sunday"));
+        model.addAttribute("groupsMonday", repo.listGroups("Monday"));
+        model.addAttribute("groupsTuesday", repo.listGroups("Tuesday"));
+        model.addAttribute("groupsWednesday", repo.listGroups("Wednesday"));
+        model.addAttribute("groupsThursday", repo.listGroups("Thursday"));
+        model.addAttribute("groupsFriday", repo.listGroups("Friday"));
+        model.addAttribute("groupsSaturday", repo.listGroups("Saturday"));
+        model.addAttribute("groupsSunday", repo.listGroups("Sunday"));
         return "index";
     }
 
 
-
- @GetMapping("/meeting")
-    public String Meeting(ModelMap model, Integer meetingId){
+    @GetMapping("/meeting")
+    public String Meeting(ModelMap model, Integer meetingId) {
         model.put("meeting", repo.getGroups(meetingId));
         return "meeting";
     }

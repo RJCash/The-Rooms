@@ -4,44 +4,85 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by rickiecashwell on 4/28/17.
- */
 @Component
 public class GroupRepository {
     @Autowired
     JdbcTemplate template;
-    public List<Group> listGroups(String day) {
-        return template.query("SELECT DISTINCT * FROM meeting WHERE list_day = ? and list_city IS NOT NULL" +
-                        " order by list_time LIMIT 100",
+
+    // list List<String> abr
+    public List<String> abrre(String input){
+        List<String> listTypes = new ArrayList<>();
+        listTypes.add(input);
+        return listTypes;
+    }
+    public List<Group> listGroups(String day){
+        List<Group> groups = template.query("SELECT  " +
+                        " meeting.id, meeting.name, meeting.meetingtime, meeting.location," +
+                        " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.abbreviation" +
+                        " FROM meeting" +
+                        " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
+                        " JOIN type ON mt.typeid = type.id" +
+                        " WHERE meetingday = ? and city IS NOT NULL" +
+                        " order by meetingtime LIMIT 100",
                 new Object[]{day},
                 (ResultSet, row) -> new Group(
-                        ResultSet.getInt("list_slug"),
-                        ResultSet.getString("list_name"),
-                        ResultSet.getString("list_time"),
-                        ResultSet.getString("list_time"),
-                        ResultSet.getString("list_day"),
-                        ResultSet.getString("list_types"),
-                        ResultSet.getString("list_city")
+                        ResultSet.getInt("id"),
+                        ResultSet.getString("name"),
+                        ResultSet.getString("location"),
+                        ResultSet.getString("meetingtime"),
+                        ResultSet.getString("meetingday"),
+                        ResultSet.getString("city"),
+                        abrre(ResultSet.getString("abbreviation")),
+                        ResultSet.getDouble("latitude"),
+                        ResultSet.getDouble("longitude")
                 )
         );
+        return groups;
     }
-        public Group getGroups(Integer meetingId){
-            return template.queryForObject("SELECT DISTINCT * FROM meeting WHERE list_slug = ?" +
-                            " order by list_time LIMIT 100",
-                    (ResultSet, row) -> new Group(
-                            ResultSet.getInt("list_slug"),
-                            ResultSet.getString("list_name"),
-                            ResultSet.getString("list_time"),
-                            ResultSet.getString("list_time"),
-                            ResultSet.getString("list_day"),
-                            ResultSet.getString("list_types"),
-                            ResultSet.getString("list_city")),
-                    meetingId);
+    public List<Group> quickFind(String day){
+        List<Group> groups = template.query("SELECT  " +
+                        " meeting.id, meeting.name, meeting.meetingtime, meeting.location," +
+                        " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.abbreviation" +
+                        " FROM meeting" +
+                        " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
+                        " JOIN type ON mt.typeid = type.id" +
+                        " WHERE meetingday = ? and city IS NOT NULL" +
+                        " order by meetingtime > CURRENT_TIME LIMIT 5",
+                new Object[]{day},
+                (ResultSet, row) -> new Group(
+                        ResultSet.getInt("id"),
+                        ResultSet.getString("name"),
+                        ResultSet.getString("location"),
+                        ResultSet.getString("meetingtime"),
+                        ResultSet.getString("meetingday"),
+                        ResultSet.getString("city"),
+                        abrre(ResultSet.getString("abbreviation")),
+                        ResultSet.getDouble("latitude"),
+                        ResultSet.getDouble("longitude")
+                )
+        );
+        return groups;
+    }
 
+        public Group getGroups(Integer meetingId){
+            return template.queryForObject("SELECT * FROM meeting WHERE id = ?",
+                    (ResultSet, row) -> new Group(
+                            ResultSet.getInt("id"),
+                            ResultSet.getString("name"),
+                            ResultSet.getString("location"),
+                            ResultSet.getString("meetingtime"),
+                            ResultSet.getString("meetingday"),
+                            ResultSet.getString("city"),
+                            abrre(ResultSet.getString("abbreviation")),
+                            ResultSet.getDouble("latitude"),
+                            ResultSet.getDouble("longitude"))
+                            ,meetingId);
     }
+
+
     public void insertJSON(){
         String json1 = "[\n" +
                "   {\n" +
