@@ -41,6 +41,8 @@ GroupRepository repo;
 
     @RequestMapping("/meeting")
     public String meetingPage(){
+
+
         return "meeting";
     }
 }

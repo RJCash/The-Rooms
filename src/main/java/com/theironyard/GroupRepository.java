@@ -14,7 +14,6 @@ import java.util.List;
 public class GroupRepository {
     @Autowired
     JdbcTemplate template;
-
     // list List<String> abr
     public List<String> abrre(String input){
         List<String> listTypes = new ArrayList<>();
@@ -24,7 +23,7 @@ public class GroupRepository {
     public List<Group> listGroups(String day){
         List<Group> groups = template.query("SELECT  " +
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.location," +
-                        " meeting.meetingday,meeting.city, type.abbreviation" +
+                        " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.abbreviation" +
                         " FROM meeting" +
                         " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
                         " JOIN type ON mt.typeid = type.id" +
@@ -38,7 +37,9 @@ public class GroupRepository {
                         ResultSet.getString("meetingtime"),
                         ResultSet.getString("meetingday"),
                         ResultSet.getString("city"),
-                        abrre(ResultSet.getString("abbreviation"))
+                        abrre(ResultSet.getString("abbreviation")),
+                        ResultSet.getDouble("latitude"),
+                        ResultSet.getDouble("longitude")
                 )
         );
 //        String[] types = {};

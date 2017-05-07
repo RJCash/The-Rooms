@@ -1,5 +1,6 @@
 package com.theironyard;
 
+import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -16,11 +17,14 @@ public class Group {
     String day;
     List<String> type;
     String city;
+    double latitude;
+    double longitude;
+    String miles;
     LocalTime timeconverter;
     DateTimeFormatter inputformatter = DateTimeFormatter.ofPattern("kk:mm:ss");
     DateTimeFormatter outputformatter = DateTimeFormatter.ofPattern("hh:mm a");
-
-    public Group(Integer id, String name, String location, String time, String day, String city, List<String> types) {
+    DecimalFormat formatter = new DecimalFormat("#0.00");
+    public Group(Integer id, String name, String location, String time, String day, String city, List<String> types, double latitude, double longitude) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -29,9 +33,32 @@ public class Group {
         this.day = day;
         this.city = city;
         this.type = types;
+        this.miles = formatter.format(Math.sqrt(Math.pow(longitude - -78.63912309999999, 2) + Math.pow(latitude - 35.7777974, 2)) *69);
         
     }
     public Group() {
+    }
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", time='" + time + '\'' +
+                ", day='" + day + '\'' +
+                ", type=" + type +
+                ", city='" + city + '\'' +
+                ", timeconverter=" + timeconverter +
+                ", inputformatter=" + inputformatter +
+                ", outputformatter=" + outputformatter +
+                '}';
+    }
+    public void setMiles(String miles){
+    this.miles = miles;
+    }
+    public String getMiles(){
+        return this.miles;
     }
     public String getTime() {
         return time;
