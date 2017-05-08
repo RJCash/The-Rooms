@@ -9,6 +9,9 @@ nav {
     width: 75%;
     margin: 20%; }
 
+.meeting-section {
+  margin-top: 15%; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'lato';
   font-weight: 400;
@@ -43,6 +46,9 @@ h1, h2, h3, h4, h5, h6 {
     height: 50%;
     margin: 5%; }
 
+@media (min-width: 767px) {
+  nav a img {
+    width: 30%; } }
 body {
   font-family: 'Asap', sans-serif;
   background: #F8F9FE;
@@ -79,7 +85,7 @@ nav {
 .header {
   background: #276AAD;
   position: fixed;
-  top: 47px;
+  top: 7%;
   width: 100%; }
 
 .quick-btn {
@@ -108,7 +114,7 @@ nav {
     margin: 0; }
 
 .selector {
-  padding-top: 150px;
+  padding-top: 38%;
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid black; }
@@ -147,5 +153,28 @@ nav {
   line-height: 0; }
   .time-distance h3, .time-distance h5 {
     font-weight: 300; }
+
+@media (min-width: 767px) {
+  nav img {
+    width: 3%; }
+
+  .quick-btn {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 6vh; }
+    .quick-btn img {
+      margin-left: 3%; }
+    .quick-btn h1 {
+      margin-right: 3%; }
+
+  .selector {
+    padding-top: 20%; } }
+@media (min-width: 1440px) {
+  .header {
+    top: 10%; }
+
+  .selector {
+    padding-top: 18%; } }
 
 /*# sourceMappingURL=style.css.map */

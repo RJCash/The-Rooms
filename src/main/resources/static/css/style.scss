@@ -1,4 +1,5 @@
 @import "partials/_meeting.scss";
+// @import "partials/_mediaqueries.scss";
 
 body {
   font-family: 'Asap', sans-serif;
@@ -42,7 +43,7 @@ nav {
 .header {
   background: #276AAD;
   position:fixed;
-  top:47px;
+  top:7%;
   width:100%;
 }
 
@@ -79,7 +80,7 @@ nav {
 
 // ----- Day Selector ----------
 .selector {
-  padding-top:150px;
+  padding-top:38%;
   display:flex;
   justify-content: space-around;
   border-bottom:1px solid black;
@@ -124,5 +125,35 @@ nav {
   line-height: 0;
   h3, h5 {
     font-weight: 300;
+  }
+}
+
+@media (min-width:767px) {
+  nav img {
+    width:3%;
+  }
+  .quick-btn {
+    display:flex;
+    justify-content: center;
+    width:30%;
+    height:6vh;
+    img {
+      margin-left:3%;
+    }
+    h1 {
+      margin-right:3%;
+    }
+  }
+  .selector {
+    padding-top: 20%;
+  }
+}
+
+@media (min-width:1440px) {
+  .header {
+    top:10%;
+  }
+  .selector {
+    padding-top:18%;
   }
 }
