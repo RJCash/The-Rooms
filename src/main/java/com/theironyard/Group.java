@@ -25,15 +25,17 @@ public class Group {
         this.id = id;
         this.name = name;
         this.location = location;
-        LocalTime templateTime = timeconverter.parse(time,inputformatter);
+        LocalTime templateTime = timeconverter.parse(time, inputformatter);
         this.time = outputformatter.format(templateTime);
         this.day = day;
         this.city = city;
         this.type = types;
-        this.miles = formatter.format(Math.sqrt(Math.pow(longitude - -78.63912309999999, 2) + Math.pow(latitude - 35.7777974, 2)) *69);
-        
+        this.miles = formatter.format(Math.sqrt(Math.pow(longitude - -78.63912309999999, 2) + Math.pow(latitude - 35.7777974, 2)) * 69);
+
     }
-    public Group(int id, String name, String location, String meetingtime, String meetingday, String city, List<String> abbreviation, double latitude, double longitude, Integer meetingId) {
+
+    public Group(){
+
     }
 
     @Override
