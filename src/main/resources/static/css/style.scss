@@ -79,6 +79,7 @@ nav {
 
 // ----- Day Selector ----------
 .selector {
+  padding-top:150px;
   display:flex;
   justify-content: space-around;
   border-bottom:1px solid black;
@@ -96,7 +97,7 @@ nav {
   display:flex;
   justify-content: space-around;
   align-items: center;
-  margin:5% 2%;
+  margin:2% 2%;
   border-radius:2px;
   box-shadow: 1px 1px 10px #888888;
 }
