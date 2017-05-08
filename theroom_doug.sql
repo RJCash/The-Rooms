@@ -2074,7 +2074,7 @@ COPY meeting_type (meetingid, typeid) FROM stdin;
 -- Data for Name: type; Type: TABLE DATA; Schema: public; Owner: doug
 --
 
-COPY type (id, abbreviation, name) FROM stdin;
+COPY type (id, abbreviation, idname) FROM stdin;
 1	O	O
 2	ST	ST
 3	X	X

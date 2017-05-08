@@ -14,17 +14,17 @@
       <h1>The Rooms</h1>
       <img class="hamburger" src="../static/images/hamburger.png" th:src="@{/images/hamburger.png}" alt=""/>
     </nav>
-    <section>
-      <h3>Meeting Name</h3>
-      <h1 class="day-time">Day at --:--am</h1>
-      <h5>Type of Meeting</h5>
-      <h4>Meeting Location <br> 1234 Main St. </br> City, State Zip Code</h4>
-      <h1>0.0 miles</h1>
+    <section th:object="${group}">
+      <h3 th:text="*{name}">Meeting Name</h3>
+      <h1 class="day-time" th:text="*{time}">Day at --:--am</h1>
+      <h5 th:text="'Type: '+*{type}">Type of Meeting</h5>
+      <h4 th:text="'Address: '+*{location}">Meeting Location <br> 1234 Main St. </br> City, State Zip Code</h4>
+      <h1 th:text="'Miles: '+*{miles}">0.0 miles</h1>
     </section>
-    <div class="go-btn" id="go-btn">
+    <a><div class="go-btn" id="go-btn">
       <img src="../static/images/location.png" th:src="@{/images/location.png}" alt=""/>
       <h1>Go!</h1>
-    </div>
+    </div></a>
     <div class="fav-btn">
       <img src="../static/images/heart.png" th:src="@{/images/heart.png}" alt=""/>
     </div>

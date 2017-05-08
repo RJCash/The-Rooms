@@ -21,19 +21,19 @@ public class GroupRepository {
         return listTypes;
     }
     public List<Group> listGroups(String day){
-        List<Group> groups = template.query("SELECT  " +
-                        " meeting.id, meeting.name, meeting.meetingtime, meeting.location," +
+        List<Group> groups = template.query("SELECT " +
+                        " meeting.id, meeting.name, meeting.meetingtime, meeting.address," +
                         " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.abbreviation" +
                         " FROM meeting" +
                         " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
                         " JOIN type ON mt.typeid = type.id" +
-                        " WHERE meetingday = ? and city IS NOT NULL" +
-                        " order by meetingtime LIMIT 100",
+                        " WHERE meetingday = ? and city IS NOT NULL " +
+                        " order by meetingtime LIMIT 50",
                 new Object[]{day},
                 (ResultSet, row) -> new Group(
                         ResultSet.getInt("id"),
                         ResultSet.getString("name"),
-                        ResultSet.getString("location"),
+                        ResultSet.getString("address"),
                         ResultSet.getString("meetingtime"),
                         ResultSet.getString("meetingday"),
                         ResultSet.getString("city"),
@@ -42,10 +42,7 @@ public class GroupRepository {
                         ResultSet.getDouble("longitude")
                 )
         );
-//        String[] types = {};
-//        for(Group group:groups){
-//            template.query();
-//            group.setType(types);
+
         return groups;
             }
 
@@ -8672,4 +8669,27 @@ public class GroupRepository {
          System.out.println(json);
 
    }
+
+    public Group specificGroup(Integer id) {
+        return template.queryForObject("SELECT " +
+                        " meeting.id, meeting.name, meeting.meetingtime, meeting.address," +
+                        " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.idname, type.abbreviation" +
+                        " FROM meeting" +
+                        " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
+                        " JOIN type ON mt.typeid = type.id " +
+                        " WHERE meeting.id = ? and city IS NOT NULL",
+                new Object[]{id},
+                (ResultSet, row) -> new Group(
+                        ResultSet.getInt("id"),
+                        ResultSet.getString("name"),
+                        ResultSet.getString("address"),
+                        ResultSet.getString("meetingtime"),
+                        ResultSet.getString("meetingday"),
+                        ResultSet.getString("city"),
+                        abrre(ResultSet.getString("abbreviation")),
+                        ResultSet.getDouble("latitude"),
+                        ResultSet.getDouble("longitude")
+
+                ));
+    }
 }

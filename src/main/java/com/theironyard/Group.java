@@ -108,11 +108,13 @@ public class Group {
         this.day = day;
     }
 
-    public List<String> getType() {
+    public List<String> getType()
+    {
         return type;
     }
 
-    public void setType(List<String> type) {
+    public void setType(List<String> type)
+    {
         this.type = type;
     }
 }
