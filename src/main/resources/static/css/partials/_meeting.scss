@@ -1,4 +1,8 @@
+body {
+  background:#F8F9FE;
+}
 nav {
+  top:0px;
   a {
     width:10%;
   }
@@ -7,7 +11,9 @@ nav {
     margin:20%;
   }
 }
-
+.meeting-section {
+  margin-top:15%;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'lato';
   font-weight: 400;
@@ -42,5 +48,10 @@ h1, h2, h3, h4, h5, h6 {
   img {
     height:50%;
     margin:5%;
+  }
+}
+@media (min-width:767px) {
+  nav a img {
+    width:30%;
   }
 }

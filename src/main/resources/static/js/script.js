@@ -1,15 +1,24 @@
+// --------- Day Label ----------
+
 // ------ Daily Meeting Selector --------
-jQuery(document).ready(function($) {
-    alert("Your location is: " + geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
-});
+
 
 // $('.meeting').hide();
 // $('#su').click(function(){
 //   $('#sunday').show();
 // });
 
+
+
 document.getElementById("su").onclick = function() {
-    $('#sunday').show();
+  document.querySelector('#su').style.color = "#276AAD";
+  document.querySelector('#m').style.color = "black";
+  document.querySelector('#tu').style.color = "black";
+  document.querySelector('#w').style.color = "black";
+  document.querySelector('#th').style.color = "black";
+  document.querySelector('#f').style.color = "black";
+  document.querySelector('#sa').style.color = "black";
+  $('#sunday').show();
     $('#monday').hide();
     $('#tuesday').hide();
     $('#wednesday').hide();
@@ -19,6 +28,13 @@ document.getElementById("su").onclick = function() {
     $('#top-five').hide();
 };
 document.getElementById("m").onclick = function() {
+  document.querySelector('#m').style.color = "#276AAD";
+  document.querySelector('#su').style.color = "black";
+  document.querySelector('#tu').style.color = "black";
+  document.querySelector('#w').style.color = "black";
+  document.querySelector('#th').style.color = "black";
+  document.querySelector('#f').style.color = "black";
+  document.querySelector('#sa').style.color = "black";
   $('#monday').show();
     $('#sunday').hide();
     $('#tuesday').hide();
@@ -30,6 +46,13 @@ document.getElementById("m").onclick = function() {
 };
 
 document.getElementById("tu").onclick = function() {
+  document.querySelector('#tu').style.color = "#276AAD";
+  document.querySelector('#su').style.color = "black";
+  document.querySelector('#m').style.color = "black";
+  document.querySelector('#w').style.color = "black";
+  document.querySelector('#th').style.color = "black";
+  document.querySelector('#f').style.color = "black";
+  document.querySelector('#sa').style.color = "black";
   $('#tuesday').show();
     $('#sunday').hide();
     $('#monday').hide();
@@ -41,6 +64,13 @@ document.getElementById("tu").onclick = function() {
 };
 
 document.getElementById("w").onclick = function() {
+  document.querySelector('#w').style.color = "#276AAD";
+  document.querySelector('#su').style.color = "black";
+  document.querySelector('#tu').style.color = "black";
+  document.querySelector('#m').style.color = "black";
+  document.querySelector('#th').style.color = "black";
+  document.querySelector('#f').style.color = "black";
+  document.querySelector('#sa').style.color = "black";
   $('#wednesday').show();
     $('#sunday').hide();
     $('#monday').hide();
@@ -52,6 +82,13 @@ document.getElementById("w").onclick = function() {
 };
 
 document.getElementById("th").onclick = function() {
+  document.querySelector('#th').style.color = "#276AAD";
+  document.querySelector('#su').style.color = "black";
+  document.querySelector('#tu').style.color = "black";
+  document.querySelector('#w').style.color = "black";
+  document.querySelector('#m').style.color = "black";
+  document.querySelector('#f').style.color = "black";
+  document.querySelector('#sa').style.color = "black";
   $('#thursday').show();
     $('#sunday').hide();
     $('#monday').hide();
@@ -63,6 +100,13 @@ document.getElementById("th").onclick = function() {
 };
 
 document.getElementById("f").onclick = function() {
+  document.querySelector('#f').style.color = "#276AAD";
+  document.querySelector('#su').style.color = "black";
+  document.querySelector('#tu').style.color = "black";
+  document.querySelector('#w').style.color = "black";
+  document.querySelector('#th').style.color = "black";
+  document.querySelector('#m').style.color = "black";
+  document.querySelector('#sa').style.color = "black";
   $('#friday').show();
     $('#sunday').hide();
     $('#monday').hide();
@@ -74,6 +118,13 @@ document.getElementById("f").onclick = function() {
 };
 
 document.getElementById("sa").onclick = function() {
+  document.querySelector('#sa').style.color = "#276AAD";
+  document.querySelector('#su').style.color = "black";
+  document.querySelector('#tu').style.color = "black";
+  document.querySelector('#w').style.color = "black";
+  document.querySelector('#th').style.color = "black";
+  document.querySelector('#f').style.color = "black";
+  document.querySelector('#m').style.color = "black";
   $('#saturday').show();
     $('#sunday').hide();
     $('#monday').hide();
@@ -122,6 +173,7 @@ document.getElementById("quick-btn").onclick = function() {
   $('#saturday').show();
   $('#top-five').show();
 };
+
 
 // ------- Favorite Button ---------
 // document.getElementById("fav-btn").onclick = function() {
