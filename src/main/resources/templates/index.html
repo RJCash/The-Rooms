@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project Template</title>
+  <title>the rooms</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
   <link href="css/normalize.css" th:href="@{css/normalize.css}" rel="stylesheet"/>
   <link href="../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet"/>
@@ -70,6 +70,36 @@
         <h5 th:text="${group.city}">City</h5>
         <h5 th:remove="all">Type of Meeting</h5>
         <p th:text="'Type: '+${group.type}"></p>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>the rooms</title>
+      <link href="https://fonts.googleapis.com/css?family=Asap:400,400i,500,500i,700,700i" rel="stylesheet"/>
+    <link href="css/normalize.css" th:href="@{css/normalize.css}" rel="stylesheet"/>
+    <link href="../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet"/>
+  </head>
+  <body>
+  <section class="stick">
+      <section class="header">
+          <nav>
+              <img class="back" id="back" th:src="@{images/back-arrow.png}" src="../static/images/back-arrow.png" alt=""/>
+              <h1>The Rooms</h1>
+              <img class="hamburger" src="../static/images/hamburger.png" th:src="@{images/hamburger.png}" alt=""/>
+          </nav>
+          <div class="quick-btn" id="quick-btn">
+              <h1>Quick Find</h1>
+              <img src="../static/images/right-arrow.png" th:src="@{images/right-arrow.png}" alt=""/>
+          </div>
+      </section>
+
+
+    <section class="selector" id="selector">
+      <div class="day" id="su">
+        <h2>Su</h2>
+
       </div>
       <div class="time-distance">
         <h5 th:text="${group.time}">--:--pm</h5>
@@ -120,6 +150,7 @@
         <h5 th:text="${group.time}">--:--pm</h5>
         <h3 th:text="${group.miles}+ ' mi'">0.00 mi</h3>
       </div>
+
     </section></a>
 </section></a>
 <a><section class="friday" id="friday">
@@ -221,3 +252,189 @@
 <script src="../static/js/script.js" th:src="@{js/script.js}"></script>
 </body>
 </html>
+
+    </section>
+  </section>
+
+  <section class="sunday" id="sunday">
+      <section th:each="group: ${groupsSunday}" class="meeting">
+        <div class="info">
+          <a href="meeting.html" th:href="@{'/meeting?id=' + ${group.id}}"><p th:text="${group.name}">Tuesday Meeting</p>
+            <h5 th:text="${group.city}">City</h5>
+            <h5 th:remove="all">Type of Meeting</h5>
+            <p th:text="'Type: '+${group.type}"></p></a>
+        </div>
+        <div class="time-distance">
+          <h5 th:text="${group.time}">--:--pm</h5>
+          <h3 th:text="${group.miles}+ ' mi'">0.00 mi</h3>
+        </div>
+      </section>
+    </section>
+
+    <section class="monday" id="monday">
+      <section th:each="group: ${groupsMonday}" class="meeting">
+        <div class="info">
+          <a href="meeting.html" th:href="@{'/meeting?id=' + ${group.id}}"><p th:text="${group.name}">Tuesday Meeting</p>
+            <h5 th:text="${group.city}">City</h5>
+            <h5 th:remove="all">Type of Meeting</h5>
+            <p th:text="'Type: '+${group.type}"></p></a>
+        </div>
+        <div class="time-distance">
+          <h5 th:text="${group.time}">--:--pm</h5>
+          <h3 th:text="${group.miles}+ ' mi'">0.00 mi</h3>
+        </div>
+      </section>
+    </section>
+
+    <section class="tuesday" id="tuesday">
+      <section th:each="group: ${groupsTuesday}" class="meeting">
+        <div class="info">
+            <a href="meeting.html" th:href="@{'/meeting?id=' + ${group.id}}"><p th:text="${group.name}">Tuesday Meeting</p>
+                <h5 th:text="${group.city}">City</h5>
+                <h5 th:remove="all">Type of Meeting</h5>
+                <p th:text="'Type: '+${group.type}"></p></a>
+        </div>
+        <div class="time-distance">
+          <h5 th:text="${group.time}">--:--pm</h5>
+          <h3 th:text="${group.miles}+ ' mi'">0.00 mi</h3>
+        </div>
+            </section>
+    </section>
+
+    <section class="wednesday" id="wednesday">
+      <section th:each="group: ${groupsWednesday}" class="meeting">
+        <div class="info">
+          <a href="meeting.html" th:href="@{'/meeting?id=' + ${group.id}}"><p th:text="${group.name}">Tuesday Meeting</p>
+            <h5 th:text="${group.city}">City</h5>
+            <h5 th:remove="all">Type of Meeting</h5>
+            <p th:text="'Type: '+${group.type}"></p></a>
+        </div>
+        <div class="time-distance">
+          <h5 th:text="${group.time}">--:--pm</h5>
+          <h3 th:text="${group.miles}+ ' mi'">0.00 mi</h3>
+        </div>
+      </section>
+    </section>
+
+
+
+    <section class="thursday" id="thursday">
+      <section th:each="group: ${groupsThursday}" class="meeting">
+        <div class="info">
+          <a href="meeting.html" th:href="@{'/meeting?id=' + ${group.id}}"><p th:text="${group.name}">Tuesday Meeting</p>
+            <h5 th:text="${group.city}">City</h5>
+            <h5 th:remove="all">Type of Meeting</h5>
+            <p th:text="'Type: '+${group.type}"></p></a>
+        </div>
+        <div class="time-distance">
+          <h5 th:text="${group.time}">--:--pm</h5>
+          <h3 th:text="${group.miles}+ ' mi'">0.00 mi</h3>
+        </div>
+      </section>
+    </section>
+
+
+
+    <section class="friday" id="friday">
+      <section th:each="group: ${groupsFriday}" class="meeting">
+        <div class="info">
+          <a href="meeting.html" th:href="@{'/meeting?id=' + ${group.id}}"><p th:text="${group.name}">Tuesday Meeting</p>
+            <h5 th:text="${group.city}">City</h5>
+            <h5 th:remove="all">Type of Meeting</h5>
+            <p th:text="'Type: '+${group.type}"></p></a>
+        </div>
+        <div class="time-distance">
+          <h5 th:text="${group.time}">--:--pm</h5>
+          <h3 th:text="${group.miles}+ ' mi'">0.00 mi</h3>
+        </div>
+      </section>
+    </section>
+
+
+    <section class="saturday" id="saturday">
+      <section th:each="group: ${groupsSaturday}" class="meeting">
+        <div class="info">
+          <a href="meeting.html" th:href="@{'/meeting?id=' + ${group.id}}"><p th:text="${group.name}">Tuesday Meeting</p>
+            <h5 th:text="${group.city}">City</h5>
+            <h5 th:remove="all">Type of Meeting</h5>
+            <p th:text="'Type: '+${group.type}"></p></a>
+        </div>
+        <div class="time-distance">
+          <h5 th:text="${group.time}">--:--pm</h5>
+          <h3 th:text="${group.miles}+ ' mi'">0.00 mi</h3>
+        </div>
+      </section>
+    </section>
+
+    <div class="quick-info" id="quick-info">
+        <h2>Next five meetings 10 miles</h2>
+    </div>
+    <section class="top-five" id="top-five">
+      <section class="meeting">
+        <div class="info">
+            <a><p>#1 Meeting Name</p>
+            <h5>City</h5>
+            <h5>Type of Meeting</h5></a>
+        </div>
+        <div class="time-distance">
+          <h5>--:--pm</h5>
+          <h3>0.00 mi</h3>
+        </div>
+      </section>
+    </section>
+
+    <section th:remove="all" class="meeting">
+        <div class="info">
+          <p>#2 Meeting Name</p>
+          <h5>City</h5>
+          <h5>Type of Meeting</h5>
+        </div>
+        <div class="time-distance">
+          <h5>--:--pm</h5>
+          <h3>0.00 mi</h3>
+        </div>
+    </section>
+
+    <section th:remove="all" class="meeting">
+        <div class="info">
+            <a href="meeting.html"><p>#3 Meeting Name</p>
+                <h5>City</h5>
+                <h5>Type of Meeting</h5></a>
+        </div>
+        <div class="time-distance">
+          <h5>--:--pm</h5>
+          <h3>0.00 mi</h3>
+        </div>
+      </section>
+
+      <section th:remove="all" class="meeting">
+        <div class="info">
+          <p>#4 Meeting Name</p>
+          <h5>City</h5>
+          <h5>Type of Meeting</h5>
+        </div>
+        <div class="time-distance">
+          <h5>--:--pm</h5>
+          <h3>0.00 mi</h3>
+        </div>
+      </section>
+
+
+      <section th:remove="all" class="meeting">
+        <div class="info">
+          <p>#5 Meeting Name</p>
+          <h5>City</h5>
+          <h5>Type of Meeting</h5>
+        </div>
+        <div class="time-distance">
+          <h5>--:--pm</h5>
+          <h3>0.00 mi</h3>
+        </div>
+      </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../static/js/script.js" th:src="@{js/script.js}"></script>
+
+  </body>
+</html>
+

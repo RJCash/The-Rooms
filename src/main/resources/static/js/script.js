@@ -1,19 +1,21 @@
 // --------- Day Label ----------
 
 // ------ Daily Meeting Selector --------
+<<<<<<< HEAD
 jQuery(document).ready(function($) {
     alert("Your location is: " + geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
 });
 <<<<<<< HEAD
+=======
+
+>>>>>>> 6c341261493ab1170177b13158cafe39d9eb3aff
 
 // $('.meeting').hide();
 // $('#su').click(function(){
 //   $('#sunday').show();
 // });
 
-document.getElementById("su").onclick = function() {
-    $('#sunday').show();
-=======
+
 
 document.getElementById("su").onclick = function() {
   document.querySelector('#su').style.color = "#276AAD";
@@ -24,7 +26,10 @@ document.getElementById("su").onclick = function() {
   document.querySelector('#f').style.color = "black";
   document.querySelector('#sa').style.color = "black";
   $('#sunday').show();
+<<<<<<< HEAD
 >>>>>>> 5559ca25a8be99743127c5fc130fd3e8950a9011
+=======
+>>>>>>> 6c341261493ab1170177b13158cafe39d9eb3aff
     $('#monday').hide();
     $('#tuesday').hide();
     $('#wednesday').hide();

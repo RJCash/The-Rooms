@@ -26,10 +26,16 @@ public class MyController {
         return "index";
     }
 
+    @RequestMapping("/meeting")
+    public String meetingPage(Model model, Integer id){
+        if(id != null){
+                model.addAttribute("group", repo.specificGroup(id));
+            }else{
+                model.addAttribute("group", new Group());
+            }
+            return "meeting";
+        }
 
-    //@GetMapping("/meeting")
-    //public String Meeting(ModelMap model, Integer meetingId) {
-        //model.put("meeting", repo.getGroups(meetingId));
-        //return "meeting";
-    //}
-}
+    }
+
+>>>>>>> 6c341261493ab1170177b13158cafe39d9eb3aff
