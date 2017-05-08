@@ -69,7 +69,8 @@ nav {
   nav h1 {
     font-weight: 300;
     color: white;
-    margin: 2%; }
+    margin: 2%;
+    font-size: 24px; }
   nav img {
     width: 7%;
     margin: 3%; }
