@@ -19,7 +19,7 @@ public class GroupRepository {
         return listTypes;
     }
     public List<Group> listGroups(String day){
-        List<Group> groups = template.query("SELECT DISTINCT" +
+        List<Group> groups = template.query("SELECT " +
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.location," +
                         " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.abbreviation" +
                         " FROM meeting" +

@@ -27,9 +27,9 @@ public class MyController {
     }
 
 
-    @GetMapping("/meeting")
-    public String Meeting(ModelMap model, Integer meetingId) {
-        model.put("meeting", repo.getGroups(meetingId));
-        return "meeting";
-    }
+    //@GetMapping("/meeting")
+    //public String Meeting(ModelMap model, Integer meetingId) {
+        //model.put("meeting", repo.getGroups(meetingId));
+        //return "meeting";
+    //}
 }

@@ -1,7 +1,9 @@
 @import "partials/_meeting.scss";
 
 body {
-  font-family: 'lato';
+  font-family: 'Asap', sans-serif;
+  background:#F8F9FE;
+  margin:0;
 }
 a {
   text-decoration:none;
@@ -14,6 +16,8 @@ nav {
   display:flex;
   justify-content:space-between;
   align-items:center;
+  border-bottom: 2px solid white;
+  position:fixed;
   h1 {
     font-weight:300;
     color:white;
@@ -26,28 +30,34 @@ nav {
   .back {
     visibility:hidden;
   }
+
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 4fb59f98af3d805c28b1acbe1340c6f7f7d711cc
-
 .logo {
   display:flex;
   justify-content: center;
-  margin-top:5%;
+  margin:5% 30%;
+  width:40%;
+}
+
+.header {
+  background: #276AAD;
+  position:fixed;
+  top:47px;
+  width:100%;
 }
 
 // ------- Quick Find Button -------
 .quick-btn {
   width:60%;
-  height:10vh;
+  height:8vh;
   background:#276AAD;
-  margin:0% auto;
-  border-radius:10px;
+  margin:0 auto;
+  margin-top:5%;
+  border: 2px solid white;
+  border-radius:2px;
   display:flex;
   justify-content: space-around;
-  align-items: center;
+  align-items:center;
 
   h1 {
     font-weight:300;
@@ -58,34 +68,42 @@ nav {
   }
 }
 .quick-info {
-  visibility:hidden;
+  visibility: hidden;
   color:#276AAD;
   text-align: center;
-  margin:0;
+  margin:0 auto;
+  h2 {
+    margin:0;
+  }
 }
 
 // ----- Day Selector ----------
 .selector {
+  padding-top:150px;
   display:flex;
   justify-content: space-around;
   border-bottom:1px solid black;
-  line-height: .5;
   h2 {
-    font-weight: 300;
+    font-weight: 400;
+    border-bottom:3px solid #F8F9FE;
+  }
+  .day:target {
+    border-bottom:3px solid #F8F9FE;
   }
 }
 
 // -------- Meeting List (homepage) -------
 .meeting {
   display:flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin:2% 10%;
-  border-bottom:1px solid black;
-
+  margin:2% 2%;
+  border-radius:2px;
+  box-shadow: 1px 1px 10px #888888;
 }
 .info {
   width:50%;
+  margin:2%;
   line-height: 0;
   text-align: center;
     p, h5 {
@@ -93,14 +111,14 @@ nav {
       word-wrap: break-word;
   }
   p {
-    line-height:1;
+    line-height:0;
   }
 }
 .time-distance {
   background:#276AAD;
   width:25%;
   height:10vh;
-  border-radius:10px;
+  border-radius:2px;
   text-align: center;
   color:white;
   line-height: 0;
@@ -108,6 +126,3 @@ nav {
     font-weight: 300;
   }
 }
-// .monday {
-//   display:none;
-// }

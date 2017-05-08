@@ -1,8 +1,13 @@
-nav a {
-  width: 10%; }
-nav a img {
-  width: 75%;
-  margin: 20%; }
+body {
+  background: #F8F9FE; }
+
+nav {
+  top: 0px; }
+  nav a {
+    width: 10%; }
+  nav a img {
+    width: 75%;
+    margin: 20%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'lato';
@@ -39,7 +44,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 5%; }
 
 body {
-  font-family: 'lato'; }
+  font-family: 'Asap', sans-serif;
+  background: #F8F9FE;
+  margin: 0; }
 
 a {
   text-decoration: none;
@@ -50,7 +57,9 @@ nav {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  border-bottom: 2px solid white;
+  position: fixed; }
   nav h1 {
     font-weight: 300;
     color: white;
@@ -64,14 +73,23 @@ nav {
 .logo {
   display: flex;
   justify-content: center;
-  margin-top: 5%; }
+  margin: 5% 30%;
+  width: 40%; }
+
+.header {
+  background: #276AAD;
+  position: fixed;
+  top: 47px;
+  width: 100%; }
 
 .quick-btn {
   width: 60%;
-  height: 10vh;
+  height: 8vh;
   background: #276AAD;
-  margin: 0% auto;
-  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 5%;
+  border: 2px solid white;
+  border-radius: 2px;
   display: flex;
   justify-content: space-around;
   align-items: center; }
@@ -85,38 +103,45 @@ nav {
   visibility: hidden;
   color: #276AAD;
   text-align: center;
-  margin: 0; }
+  margin: 0 auto; }
+  .quick-info h2 {
+    margin: 0; }
 
 .selector {
+  padding-top: 150px;
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid black;
-  line-height: .5; }
+  border-bottom: 1px solid black; }
   .selector h2 {
-    font-weight: 300; }
+    font-weight: 400;
+    border-bottom: 3px solid #F8F9FE; }
+  .selector .day:target {
+    border-bottom: 3px solid #F8F9FE; }
 
 .meeting {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin: 2% 10%;
-  border-bottom: 1px solid black; }
+  margin: 2% 2%;
+  border-radius: 2px;
+  box-shadow: 1px 1px 10px #888888; }
 
 .info {
   width: 50%;
+  margin: 2%;
   line-height: 0;
   text-align: center; }
   .info p, .info h5 {
     font-weight: 300;
     word-wrap: break-word; }
   .info p {
-    line-height: 1; }
+    line-height: 0; }
 
 .time-distance {
   background: #276AAD;
   width: 25%;
   height: 10vh;
-  border-radius: 10px;
+  border-radius: 2px;
   text-align: center;
   color: white;
   line-height: 0; }
