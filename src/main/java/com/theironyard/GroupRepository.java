@@ -11,7 +11,6 @@ import java.util.List;
 public class GroupRepository {
     @Autowired
     JdbcTemplate template;
-
     // list List<String> abr
     public List<String> abrre(String input){
         List<String> listTypes = new ArrayList<>();
@@ -28,7 +27,7 @@ public class GroupRepository {
                         " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
                         " JOIN type ON mt.typeid = type.id" +
                         " WHERE meeting.meetingday = ? and city IS NOT NULL " +
-                        " order by meetingtime LIMIT 50",
+                        " GROUP BY meeting.name order by meetingtime LIMIT 50",
                 new Object[]{day},
                 (ResultSet, row) -> new Group(
                         ResultSet.getInt("id"),

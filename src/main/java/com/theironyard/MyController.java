@@ -3,8 +3,6 @@ package com.theironyard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -35,7 +33,20 @@ public class MyController {
             }
             return "meeting";
         }
+    @RequestMapping("/location")
+    public String location(Model model, Integer id){
+        if(id != null){
+            model.addAttribute("group", repo.specificGroup(id));
+            model.addAttribute("groupLatitude", repo.specificGroup(id).getLatitude());
+            model.addAttribute("groupLongitude", repo.specificGroup(id).getLongitude());
+            model.addAttribute("groupMiles", repo.specificGroup(id).getMiles());
+        }else{
+            model.addAttribute("group", new Group());
+        }
 
+        return "Location";
     }
+
+}
 
 
