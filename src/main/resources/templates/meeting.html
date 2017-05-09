@@ -22,7 +22,8 @@
     <h1 th:text="'Miles: '+*{miles}">0.0 Miles</h1>
 </section>
 <div th:object="${group}" class="go-btn" id="go-btn">
-    <a th:href="@{'https://www.google.com/maps/place/'+${group.getFormattedAdrress()} +'/@37.5475107,-79.0802404,17z/data=!3m1!4b1!4m5!3m4!1s0x89b320c43ede6ea7:0x6df101ad9e1b9212!8m2!3d37.5475065!4d-79.0780464'}"><img src="../static/images/location.png" th:src="@{images/location.png}" alt=""/>
+    <a th:href="@{'https://www.google.com/maps/place/'+${group.getFormattedAdrress()} +'/@37.5475107,-79.0802404,17z/data=!3m1!4b1!4m5!3m4!1s0x89b320c43ede6ea7:0x6df101ad9e1b9212!8m2!3d37.5475065!4d-79.0780464'}">
+      <!-- <img src="../static/images/location.png" th:src="@{images/location.png}" alt=""/> -->
         <h1>Go!</h1></a>
 </div>
 <div class="fav-btn" id="fav-btn">
