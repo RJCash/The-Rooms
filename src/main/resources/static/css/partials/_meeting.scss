@@ -1,5 +1,6 @@
 body {
   background:#F8F9FE;
+
 }
 nav {
   top:0px;
@@ -15,7 +16,7 @@ nav {
   margin-top:15%;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'lato';
+  font-family: 'ASAP', sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -26,7 +27,6 @@ h1, h2, h3, h4, h5, h6 {
   width:60%;
   height:10vh;
   background:#276AAD;
-  color:white;
   margin:10% auto;
   border-radius:10px;
   display:flex;
@@ -34,7 +34,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   img {
     height:50%;
-    
+  }
+  a {
+    color:white;
+    font-family: 'ASAP', sans-serif;
   }
 }
 .fav-btn {
