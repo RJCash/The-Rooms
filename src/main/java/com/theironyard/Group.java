@@ -53,6 +53,23 @@ public class Group {
                 ", outputformatter=" + outputformatter +
                 '}';
     }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
     public void setMiles(String miles){
     this.miles = miles;
     }
@@ -113,5 +130,9 @@ public class Group {
     public void setType(List<String> type)
     {
         this.type = type;
+    }
+
+    public String getFormattedAdrress(){
+        return this.location.replaceAll(" ","+");
     }
 }

@@ -23,12 +23,20 @@
         }
         else{
             x.innerHTML="Geolocation is not supported by this browser.";}
+
+            $.get("/location?location="+lat+"&longitude="+longt, function(result){
+                console.log(result);
+            })
+
     }
     function showPosition(position){
         lat = position.coords.latitude;
         longt = position.coords.longitude;
         x.innerHTML="Latitude: " + lat + "<br>Longitude: " + longt;
     }
+
+
+
 </script>
 </body>
 </html>

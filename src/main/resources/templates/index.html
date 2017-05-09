@@ -11,10 +11,9 @@
 </head>
 <body>
 <section class="stick">
-
-
   <section class="header">
     <nav>
+
       <img class="back" id="back" src="../static/images/back-arrow.png" alt=""  th:src="@{images/back-arrow.png}" />
       <h1>The Rooms</h1>
       <img class="hamburger" src="../static/images/hamburger.png" alt="" th:src="@{images/hamburger.png}"/>
@@ -53,7 +52,9 @@
   </section>
   <hr>
 </section>
+
 <br/>
+
 
 <section class="sunday" id="sunday">
   <section th:each="group: ${groupsSunday}" class="meeting">

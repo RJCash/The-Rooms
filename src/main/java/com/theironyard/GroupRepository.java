@@ -11,7 +11,6 @@ import java.util.List;
 public class GroupRepository {
     @Autowired
     JdbcTemplate template;
-
     // list List<String> abr
     public List<String> abrre(String input){
         List<String> listTypes = new ArrayList<>();
@@ -72,7 +71,7 @@ public class GroupRepository {
     public Group specificGroup(Integer id) {
         return template.queryForObject("SELECT " +
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.address," +
-                        " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.name, type.abbreviation" +
+                        " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.idname, type.abbreviation" +
                         " FROM meeting " +
                         " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
                         " JOIN type ON mt.typeid = type.id " +

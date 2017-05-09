@@ -1,9 +1,7 @@
 // --------- Day Label ----------
 
 // ------ Daily Meeting Selector --------
-jQuery(document).ready(function($) {
-    alert("Your location is: " + geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
-});
+
 
 
 // $('.meeting').hide();
