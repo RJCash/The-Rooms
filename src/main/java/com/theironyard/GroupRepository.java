@@ -27,7 +27,7 @@ public class GroupRepository {
                         " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
                         " JOIN type ON mt.typeid = type.id" +
                         " WHERE meeting.meetingday = ? and city IS NOT NULL " +
-                        " GROUP BY meeting.name order by meetingtime LIMIT 50",
+                        " order by meetingtime LIMIT 50",
                 new Object[]{day},
                 (ResultSet, row) -> new Group(
                         ResultSet.getInt("id"),

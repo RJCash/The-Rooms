@@ -8,6 +8,5 @@ public class Main {
 
     public static void main(String[] args) {
         GroupRepository repo = new GroupRepository();
-        //repo.insertJSON();
     }
 }

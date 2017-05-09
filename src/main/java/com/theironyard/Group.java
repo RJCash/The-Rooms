@@ -131,4 +131,8 @@ public class Group {
     {
         this.type = type;
     }
+
+    public String getFormattedAdrress(){
+        return this.location.replaceAll(" ","+");
+    }
 }
