@@ -15,7 +15,7 @@
     <img class="hamburger" th:src="@{/images/hamburger.png}" src="../static/images/hamburger.png" alt=""/>
 </nav>
 <section th:object="${group}" class="meeting-section">
-    <h3>Meeting Name</h3>
+    <h3 th:text="*{name}">Meeting Name</h3>
     <h1 class="day-time" th:text="*{time}">Day at --:--am</h1>
     <h5 th:text="'Type: '+*{type}">Type of Meeting</h5>
     <h4 th:text="'Address: '+*{location}">Meeting Location <br/> 1234 Main St. <br/> City, State Zip Code</h4>
