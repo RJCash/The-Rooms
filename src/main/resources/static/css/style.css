@@ -114,15 +114,15 @@ nav {
     margin: 0; }
 
 .selector {
-  padding-top: 38%;
+  padding-top: 40%;
   display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid black; }
+  justify-content: space-around; }
   .selector h2 {
     font-weight: 400;
-    border-bottom: 3px solid #F8F9FE; }
-  .selector .day:target {
-    border-bottom: 3px solid #F8F9FE; }
+    border-bottom: 3px solid #F8F9FE;
+    line-height: 0; }
+  .selector .day {
+    border-bottom: 3px solid transparent; }
 
 .meeting {
   display: flex;
