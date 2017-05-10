@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class MyController {
     @Autowired
@@ -14,7 +16,7 @@ public class MyController {
     @RequestMapping("/")
     public String Home(Model model, @RequestParam(defaultValue = "") String day) {
         model.addAttribute("day", day);
-        model.addAttribute("groups", repo.quickFind());
+        model.addAttribute("groups", repo.quickFind(LocalDateTime.now().getDayOfWeek().toString()));
         model.addAttribute("groupsMonday", repo.listGroups("Monday"));
         model.addAttribute("groupsTuesday", repo.listGroups("Tuesday"));
         model.addAttribute("groupsWednesday", repo.listGroups("Wednesday"));
