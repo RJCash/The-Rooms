@@ -45,12 +45,12 @@ public class GroupRepository {
         return groups;
     }
     public List<Group> quickFind(){
-        List<Group> groups = template.query("SELECT" +
+        List<Group> groups = template.query("SELECT * FROM (SELECT DISTINCT ON (meeting.name)" +
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.location," +
                         " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude" +
                         " FROM meeting " +
                         " WHERE meeting.name<>''" +
-                        " order by meetingtime > CURRENT_TIME LIMIT 5",
+                        " order by meeting.name)p Where (sqrt(POWER(longitude - -78.63912309999999, 2) + power(latitude - 35.7777974, 2)) * 69) <= 10 order by meetingtime < LOCALTIME LIMIT 5",
                 new Object[]{},
                 (ResultSet, row) -> new Group(
                         ResultSet.getInt("id"),
