@@ -23,7 +23,7 @@ public class GroupRepository {
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.address," +
                         " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude, type.abbreviation" +
                         " FROM meeting" +
-//                        " UNION SELECT * From meeting_type UNION SELECT * FROM type" +
+                        //" UNION SELECT * From meeting_type UNION SELECT * FROM type" +
                         " JOIN meeting_type as mt ON mt.meetingid= meeting.id" +
                         " JOIN type ON mt.typeid = type.id" +
                         " WHERE meeting.meetingday = ? and city IS NOT NULL " +
