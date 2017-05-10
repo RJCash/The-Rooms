@@ -14,6 +14,7 @@ public class MyController {
     @RequestMapping("/")
     public String Home(Model model, @RequestParam(defaultValue = "") String day) {
         model.addAttribute("day", day);
+        model.addAttribute("groups", repo.quickFind());
         model.addAttribute("groupsMonday", repo.listGroups("Monday"));
         model.addAttribute("groupsTuesday", repo.listGroups("Tuesday"));
         model.addAttribute("groupsWednesday", repo.listGroups("Wednesday"));
