@@ -117,7 +117,7 @@ public class Group {
     }
 
     public String getFormattedAdrress(){
-        return this.location.replaceAll(" ","+");
+        return (this.location+" "+this.city+" "+"North Carolina").replaceAll(" ","+");
     }
 
 
