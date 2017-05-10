@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalTime;
 import java.util.List;
 
 @Component
@@ -67,8 +66,7 @@ public class GroupRepository {
         return groups;
     }
 
-
-        public Group specificGroup(Integer id) {
+    public Group specificGroup(Integer id) {
         return template.queryForObject("SELECT DISTINCT " +
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.address," +
                         " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude" +
@@ -88,8 +86,5 @@ public class GroupRepository {
 
                 ));
     }
-    public String getCurrentTime(){
 
-        return LocalTime.now().toString();
-    }
 }
