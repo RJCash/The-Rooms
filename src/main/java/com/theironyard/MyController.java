@@ -36,6 +36,10 @@ public class MyController {
             }
             return "meeting";
         }
+    @RequestMapping("/counter")
+    public String counter(){
+        return "counter";
+    }
     @RequestMapping("/location")
     public String location(Model model, Integer id){
         if(id != null){
