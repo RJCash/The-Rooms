@@ -22,7 +22,7 @@
     <h1 th:text="'Miles: '+*{miles}">0.0 Miles</h1>
 </section>
 <div th:object="${group}" class="go-btn" id="go-btn">
-    <a th:href="@{'https://www.google.com/maps/place/'+${group.getFormattedAdrress()} +'/@'+${group.latitude}+','+${group.longitude}}">
+    <a th:href="@{'https://www.google.com/maps/place/'+${group.getFormattedAdrress()} +'/@'+${group.latitude}+','+${group.longitude}}" target="_blank">
         <h1>Go!</h1></a>
 </div>
 <div class="fav-btn" id="fav-btn">
