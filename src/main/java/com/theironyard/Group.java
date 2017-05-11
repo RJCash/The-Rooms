@@ -12,7 +12,7 @@ public class Group {
     String location;
     String time;
     String day;
-    List<String> type;
+    List<Type> type;
     String city;
     double latitude;
     double longitude;
@@ -21,7 +21,7 @@ public class Group {
     DateTimeFormatter inputformatter = DateTimeFormatter.ofPattern("kk:mm:ss");
     DateTimeFormatter outputformatter = DateTimeFormatter.ofPattern("hh:mm a");
     DecimalFormat formatter = new DecimalFormat("#0.00");
-    public Group(Integer id, String name, String location, String time, String day, String city, List<String> types, double latitude, double longitude) {
+    public Group(Integer id, String name, String location, String time, String day, String city, List<Type> types, double latitude, double longitude) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -36,22 +36,6 @@ public class Group {
 
     public Group(){
 
-    }
-
-    @Override
-    public String toString() {
-        return "Group{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", location='" + location + '\'' +
-                ", time='" + time + '\'' +
-                ", day='" + day + '\'' +
-                ", type=" + type +
-                ", city='" + city + '\'' +
-                ", timeconverter=" + timeconverter +
-                ", inputformatter=" + inputformatter +
-                ", outputformatter=" + outputformatter +
-                '}';
     }
 
     public double getLatitude() {
@@ -122,17 +106,38 @@ public class Group {
         this.day = day;
     }
 
-    public List<String> getType()
+    public List<Type> getType()
     {
         return type;
     }
 
-    public void setType(List<String> type)
+    public void setType(List<Type> type)
     {
         this.type = type;
     }
 
     public String getFormattedAdrress(){
-        return this.location.replaceAll(" ","+");
+        return (this.location+" "+this.city+" "+"North Carolina").replaceAll(" ","+");
+    }
+
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", time='" + time + '\'' +
+                ", day='" + day + '\'' +
+                ", type=" + type +
+                ", city='" + city + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", miles='" + miles + '\'' +
+                ", timeconverter=" + timeconverter +
+                ", inputformatter=" + inputformatter +
+                ", outputformatter=" + outputformatter +
+                ", formatter=" + formatter +
+                '}';
     }
 }
