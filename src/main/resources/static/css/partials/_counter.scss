@@ -4,9 +4,6 @@ body {
 p h1 h2 h3 h4 h5 h6 {
   font-family: 'ASAP', sans-serif;
 }
-h1 {
-  color:#276AAD;
-}
 nav {
   top:0px;
   a {
@@ -33,6 +30,7 @@ form {
   }
   h1 {
     margin:10%;
+    color:#276AAD;
   }
   input {
   display: block;
