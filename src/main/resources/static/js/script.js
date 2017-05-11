@@ -350,3 +350,22 @@ document.getElementById("sa").onclick = function() {
 // document.getElementById("fav-btn").onclick = function() {
 //   document.querySelector('#fav-btn').style.background = "#EA5858";
 // };
+
+// ------- Sobriety Counter ----------
+function myFunction() {
+  var year = parseInt(document.querySelector("#year").value);
+  var month = parseInt(document.querySelector("#month").value);
+  var day = parseInt(document.querySelector("#day").value);
+
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1;
+  var yyyy = today.getFullYear();
+  today = mm+', '+dd+', '+yyyy;
+
+  var startDate = new Date(year, month, day);
+  today = new Date (yyyy, mm, dd);
+  var one_day = 1000*60*60*24;
+  console.log(Math.ceil(today.getTime()-startDate.getTime()/(one_day))+" days sober!");
+  $('#hold-answer').html(Math.ceil((today.getTime()-startDate.getTime())/(one_day))+" days sober!");
+};

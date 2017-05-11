@@ -14,21 +14,17 @@
     <h1>the rooms</h1>
     <img class="hamburger" th:src="@{/images/hamburger.png}" src="../static/images/hamburger.png" alt=""/>
 </nav>
-<section th:object="${group}" class="meeting-section">
-    <h3 th:text="'Name:'+*{name}">Meeting Name</h3>
-    <h1 class="day-time" th:text="*{time}">Day at --:--am</h1>
-    <h5 th:text="'Type: '+*{type}">Type of Meeting</h5>
-    <h4 th:text="'Address: '+*{location}">Meeting Location <br/> 1234 Main St. <br/> City, State Zip Code</h4>
-    <h1 th:text="'Miles: '+*{miles}">0.0 Miles</h1>
-</section>
-<div th:object="${group}" class="go-btn" id="go-btn">
-    <a th:href="@{'https://www.google.com/maps/place/'+${group.getFormattedAdrress()} +'/@37.5475107,-79.0802404,17z/data=!3m1!4b1!4m5!3m4!1s0x89b320c43ede6ea7:0x6df101ad9e1b9212!8m2!3d37.5475065!4d-79.0780464'}">
-      <!-- <img src="../static/images/location.png" th:src="@{images/location.png}" alt=""/> -->
-        <h1>Go!</h1></a>
-</div>
-<div class="fav-btn" id="fav-btn">
-    <img src="../static/images/heart2.png" th:src="@{/images/heart2.png}" alt=""/>
-    <h2>Favorite</h2>
+<form>
+  <h1>Sobriety Counter</h1>
+  <input type="text" id="year" placeholder="year (yyyy)"></input>
+  <br>
+  <input type="text" id="month" placeholder="month (mm)"></input>
+  <br>
+  <input type="text" id="day" placeholder="day (dd)"></input>
+  <button type="button" onclick="myFunction()"><h2>Submit</h2></button>
+</form>
+<div id="hold-answer">
+
 </div>
 
 
