@@ -23,7 +23,6 @@
 </section>
 <div th:object="${group}" class="go-btn" id="go-btn">
     <a th:href="@{'https://www.google.com/maps/place/'+${group.getFormattedAdrress()} +'/@'+${group.latitude}+','+${group.longitude}}">
-      <!-- <img src="../static/images/location.png" th:src="@{images/location.png}" alt=""/> -->
         <h1>Go!</h1></a>
 </div>
 <div class="fav-btn" id="fav-btn">
