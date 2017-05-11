@@ -12,7 +12,7 @@
 <nav>
     <a href="index.html"  th:href="@{/}"><img id="back" src="../static/images/back-arrow.png" th:src="@{/images/back-arrow.png}" alt=""/></a>
     <h1>the rooms</h1>
-    <img class="hamburger" th:src="@{/images/hamburger.png}" src="../static/images/hamburger.png" alt=""/>
+    <a href="counter.html"><img class="hours" src="../static/images/hours.png" alt="" th:src="@{images/hours.png}"/></a>
 </nav>
 <section th:object="${group}" class="meeting-section">
     <h3 th:text="*{name}">Meeting Name</h3>
