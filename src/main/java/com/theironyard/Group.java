@@ -5,7 +5,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-
 public class Group {
     Integer id;
     String name;
@@ -30,7 +29,7 @@ public class Group {
         this.day = day;
         this.city = city;
         this.type = types;
-        this.miles = formatter.format(Math.sqrt(Math.pow(longitude - -78.63912309999999, 2) + Math.pow(latitude - 35.7777974, 2)) * 69);
+        this.miles = formatter.format(Math.sqrt(Math.pow(longitude - -78.6401854, 2) + Math.pow(latitude - 35.7754742, 2)) * 69);
 
     }
 
@@ -95,8 +94,6 @@ public class Group {
     public void setLocation(String location) {
         this.location = location;
     }
-
-
 
     public String getDay() {
         return day;
