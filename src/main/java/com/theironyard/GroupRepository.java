@@ -20,7 +20,7 @@ public class GroupRepository {
                 )
                 );
     }
-    public List<Group> listGroups(String day){
+    public List<Group> listGroups(String day,double currentLat, double currentLong){
         List<Group> groups = template.query("SELECT DISTINCT " +
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.address," +
                         " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude" +
@@ -36,6 +36,8 @@ public class GroupRepository {
                         ResultSet.getString("meetingday"),
                         ResultSet.getString("city"),
                         types(ResultSet.getInt("id")),
+                        currentLat,
+                        currentLong,
                         ResultSet.getDouble("latitude"),
                         ResultSet.getDouble("longitude")
                 )

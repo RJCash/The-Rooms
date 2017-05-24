@@ -14,16 +14,16 @@ public class MyController {
     GroupRepository repo;
 
     @RequestMapping("/")
-    public String Home(Model model, @RequestParam(defaultValue = "") String day) {
+    public String Home(Model model, @RequestParam(defaultValue = "") String day,@RequestParam(defaultValue = "35.7754742") double currentLat, @RequestParam(defaultValue = "-78.6401854") double currentLong) {
         model.addAttribute("day", day);
         model.addAttribute("groups", repo.quickFind(LocalDateTime.now().getDayOfWeek().toString()));
-        model.addAttribute("groupsMonday", repo.listGroups("Monday"));
-        model.addAttribute("groupsTuesday", repo.listGroups("Tuesday"));
-        model.addAttribute("groupsWednesday", repo.listGroups("Wednesday"));
-        model.addAttribute("groupsThursday", repo.listGroups("Thursday"));
-        model.addAttribute("groupsFriday", repo.listGroups("Friday"));
-        model.addAttribute("groupsSaturday", repo.listGroups("Saturday"));
-        model.addAttribute("groupsSunday", repo.listGroups("Sunday"));
+        model.addAttribute("groupsMonday", repo.listGroups("Monday",currentLat,currentLong));
+        model.addAttribute("groupsTuesday", repo.listGroups("Tuesday",currentLat,currentLong));
+        model.addAttribute("groupsWednesday", repo.listGroups("Wednesday",currentLat,currentLong));
+        model.addAttribute("groupsThursday", repo.listGroups("Thursday",currentLat,currentLong));
+        model.addAttribute("groupsFriday", repo.listGroups("Friday",currentLat,currentLong));
+        model.addAttribute("groupsSaturday", repo.listGroups("Saturday",currentLat,currentLong));
+        model.addAttribute("groupsSunday", repo.listGroups("Sunday",currentLat,currentLong));
         return "index";
     }
 

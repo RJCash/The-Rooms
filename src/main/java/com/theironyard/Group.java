@@ -15,6 +15,8 @@ public class Group {
     String city;
     double latitude;
     double longitude;
+    double currentLat;
+    double currentLong;
     String miles;
     LocalTime timeconverter;
     DateTimeFormatter inputformatter = DateTimeFormatter.ofPattern("kk:mm:ss");
@@ -32,7 +34,18 @@ public class Group {
         this.miles = formatter.format(Math.sqrt(Math.pow(longitude - -78.6401854, 2) + Math.pow(latitude - 35.7754742, 2)) * 69);
 
     }
+    public Group(Integer id, String name, String location, String time, String day, String city, List<Type> types,double currentLat, double currentLong, double latitude, double longitude) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        LocalTime templateTime = timeconverter.parse(time, inputformatter);
+        this.time = outputformatter.format(templateTime);
+        this.day = day;
+        this.city = city;
+        this.type = types;
+        this.miles = formatter.format(Math.sqrt(Math.pow(longitude - currentLong, 2) + Math.pow(latitude - currentLat, 2)) * 69);
 
+    }
     public Group(){
 
     }
