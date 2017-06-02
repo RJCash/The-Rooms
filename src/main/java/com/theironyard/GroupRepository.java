@@ -20,7 +20,7 @@ public class GroupRepository {
                 )
                 );
     }
-    public List<Group> listGroups(String day,double currentLat, double currentLong){
+    public List<Group> listGroups(String day,Double currentLat, Double currentLong){
         List<Group> groups = template.query("SELECT DISTINCT " +
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.address," +
                         " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude" +
@@ -44,14 +44,14 @@ public class GroupRepository {
         );
         return groups;
     }
-    public List<Group> quickFind(String day){
+    public List<Group> quickFind(String day, double currentLat, double currentLong){
         List<Group> groups = template.query("SELECT * FROM(SELECT * FROM (SELECT DISTINCT ON (meeting.name)" +
                         " meeting.id, meeting.name, meeting.meetingtime, meeting.location," +
                         " meeting.meetingday,meeting.city, meeting.latitude, meeting.longitude" +
                         " FROM meeting " +
                         " WHERE lower(meeting.meetingday) = lower(?) and meeting.name<>''" +
-                        " order by meeting.name)p Where (sqrt(POWER(longitude - -78.6401854, 2) + power(latitude - 35.7754742, 2)) * 69) <= 10 and (meetingtime > LOCALTIME))a order by meetingtime LIMIT 5",
-                new Object[]{day},
+                        " order by meeting.name)p Where (sqrt(POWER(longitude - ?,2) + power(latitude - ?, 2)) * 69) <= 10 and (meetingtime > LOCALTIME))a order by meetingtime LIMIT 5",
+                new Object[]{day, currentLong, currentLat},
                 (ResultSet, row) -> new Group(
                         ResultSet.getInt("id"),
                         ResultSet.getString("name"),
@@ -60,6 +60,8 @@ public class GroupRepository {
                         ResultSet.getString("meetingday"),
                         ResultSet.getString("city"),
                         types(ResultSet.getInt("id")),
+                        currentLat,
+                        currentLong,
                         ResultSet.getDouble("latitude"),
                         ResultSet.getDouble("longitude")
                 )

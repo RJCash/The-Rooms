@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
@@ -13,10 +14,11 @@ public class MyController {
     @Autowired
     GroupRepository repo;
 
-    @RequestMapping("/")
-    public String Home(Model model, @RequestParam(defaultValue = "") String day,@RequestParam(defaultValue = "35.7754742") double currentLat, @RequestParam(defaultValue = "-78.6401854") double currentLong) {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String Home(Model model, @RequestParam(defaultValue = "") String day,@RequestParam(defaultValue = "0.0") final Double currentLat, @RequestParam(defaultValue = "0.0") final Double currentLong) {
+        System.out.println(currentLat+" "+currentLong);
         model.addAttribute("day", day);
-        model.addAttribute("groups", repo.quickFind(LocalDateTime.now().getDayOfWeek().toString()));
+        model.addAttribute("groups", repo.quickFind(LocalDateTime.now().getDayOfWeek().toString(),currentLat,currentLong));
         model.addAttribute("groupsMonday", repo.listGroups("Monday",currentLat,currentLong));
         model.addAttribute("groupsTuesday", repo.listGroups("Tuesday",currentLat,currentLong));
         model.addAttribute("groupsWednesday", repo.listGroups("Wednesday",currentLat,currentLong));
@@ -24,9 +26,9 @@ public class MyController {
         model.addAttribute("groupsFriday", repo.listGroups("Friday",currentLat,currentLong));
         model.addAttribute("groupsSaturday", repo.listGroups("Saturday",currentLat,currentLong));
         model.addAttribute("groupsSunday", repo.listGroups("Sunday",currentLat,currentLong));
+
         return "index";
     }
-
     @RequestMapping("/meeting")
     public String meetingPage(Model model, Integer id){
         if(id != null){
