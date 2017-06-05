@@ -1,21 +1,18 @@
 // --------- Location -----------
 $(document).ready(function() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(capturePosition);
     }
     else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
+        capturePosition();
     }
-    function showPosition(position) {
-        var lat;
-        var longt;
-        lat = position.coords.latitude;
-        longt = position.coords.longitude;
-        console.log(lat+" "+longt);
-        $.get("/?currentLat=" + lat + "&currentLong=" + longt, function (result) {
-            console.log(result);
-        })
-
+    function capturePosition(position) {
+        if (position && position.coords) {
+            window.location = "/?currentLat=" + position.coords.latitude + "&currentLong=" + position.coords.longitude;
+        }
+        else {
+            window.location = "/";
+        }
     }
 });
 // --------- Day Label ----------

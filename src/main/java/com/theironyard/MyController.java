@@ -15,7 +15,9 @@ public class MyController {
     GroupRepository repo;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String Home(Model model, @RequestParam(defaultValue = "") String day,@RequestParam(defaultValue = "0.0") final Double currentLat, @RequestParam(defaultValue = "0.0") final Double currentLong) {
+    public String Home(Model model, @RequestParam(defaultValue = "") String day,@RequestParam(defaultValue = "0") final Double currentLat, @RequestParam(defaultValue = "0") final Double currentLong) {
+        model.addAttribute("currentLat",currentLat);
+        model.addAttribute("currentLong",currentLong);
         System.out.println(currentLat+" "+currentLong);
         model.addAttribute("day", day);
         model.addAttribute("groups", repo.quickFind(LocalDateTime.now().getDayOfWeek().toString(),currentLat,currentLong));
@@ -26,7 +28,6 @@ public class MyController {
         model.addAttribute("groupsFriday", repo.listGroups("Friday",currentLat,currentLong));
         model.addAttribute("groupsSaturday", repo.listGroups("Saturday",currentLat,currentLong));
         model.addAttribute("groupsSunday", repo.listGroups("Sunday",currentLat,currentLong));
-
         return "index";
     }
     @RequestMapping("/meeting")

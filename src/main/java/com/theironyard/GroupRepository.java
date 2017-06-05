@@ -10,7 +10,6 @@ import java.util.List;
 public class GroupRepository {
     @Autowired
     JdbcTemplate template;
-    // list List<String> abr
     public List<Type> types(Integer id){
         return template.query("SELECT * FROM meeting_type, type WHERE meeting_type.meetingid = ? and type.id = typeid",
                 new Object[]{id},
